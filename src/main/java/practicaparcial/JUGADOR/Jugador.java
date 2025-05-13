@@ -3,18 +3,11 @@ package practicaparcial.JUGADOR;
 import practicaparcial.ACCIONES.Pila;
 import practicaparcial.SOLICITUDES.Cola;
 
-public class Jugador implements IJugador {
-    // variables de jugador
+public class Jugador {
     private String nombre;
     private int puntaje;
     private Pila acciones;
-    private Cola solicitudes;
-
-    // variables de nodo
-    private Jugador hijoDerecho;
-    private Jugador hijoIzquierdo;
-    private int nivel;
-    
+    private Cola solicitudes;    
 
     public Jugador(String nombre, int puntaje) {
         this.nombre = nombre;

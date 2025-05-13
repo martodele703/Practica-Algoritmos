@@ -16,7 +16,7 @@ public interface IArbol {
      * @param jugadorNuevo el jugador que se desea insertar
      * @return {@code true} si el jugador fue insertado correctamente, {@code false} en caso contrario
      */
-    boolean insertar(Jugador jugadorNuevo);
+    boolean insertar(INodoJuadores jugadorNuevo);
 
     /**
      * Elimina un jugador del árbol.
@@ -24,7 +24,7 @@ public interface IArbol {
      * @param eliminado el jugador que se desea eliminar
      * @return {@code true} si el jugador fue eliminado, {@code false} si no se encontró
      */
-    boolean eliminar(Jugador eliminado);
+    boolean eliminar(INodoJuadores eliminado);
 
     /**
      * Busca un jugador en el árbol en base a su puntaje.
@@ -32,7 +32,7 @@ public interface IArbol {
      * @param puntaje el puntaje que se desea buscar
      * @returnel jugador si el jugador fue encontrado, {@code null} en caso contrario
      */
-    Jugador buscar(int puntaje);
+    INodoJuadores buscar(int puntaje);
 
     /**
      * Devuelve una representación en cadena del recorrido en preorden del árbol.
@@ -46,7 +46,7 @@ public interface IArbol {
      *
      * @return una cadena con los jugadores en inorden
      */
-    String impreimirInOrden(); // Nótese el error ortográfico: "impreimir" debería ser "imprimir"
+    String imprimirInOrden(); // Nótese el error ortográfico: "impreimir" debería ser "imprimir"
 
     /**
      * Devuelve una representación en cadena del recorrido en postorden del árbol.
@@ -96,11 +96,12 @@ public interface IArbol {
     String obtenerNombre(int puntaje);
 
     /**
-     * Obtiene el puntaje de la raíz del árbol o de otro nodo relevante según la implementación.
+     * Obtiene el puntaje de la raíz del árbol o de otro nodo relevante segun la entrada.
      *
-     * @return el puntaje correspondiente
+     * @param jugador el jugador a buscar.
+     * @return el puntaje correspondiente.
      */
-    int obtenerPuntaje();
+    int obtenerPuntaje(INodoJuadores jugador);
 
     /**
      * Obtiene la pila de acciones del jugador con el puntaje especificado.
@@ -124,7 +125,7 @@ public interface IArbol {
      * @param puntaje el puntaje del jugador
      * @return el jugador que es hijo derecho, o {@code null} si no existe
      */
-    Jugador obtenerHijoDerecho(int puntaje);
+    INodoJuadores obtenerHijoDerecho(int puntaje);
 
     /**
      * Obtiene el hijo izquierdo del jugador con el puntaje indicado.
@@ -132,15 +133,16 @@ public interface IArbol {
      * @param puntaje el puntaje del jugador
      * @return el jugador que es hijo izquierdo, o {@code null} si no existe
      */
-    Jugador obtenerHijoIzquierdo(int puntaje);
+    INodoJuadores obtenerHijoIzquierdo(int puntaje);
 
     /**
      * Establece el hijo derecho de un jugador identificado por su puntaje.
      *
      * @param puntaje el puntaje del jugador padre
      * @param hijoDerecho el jugador que será asignado como hijo derecho
+     * @return {@code null}
      */
-    void establecerHijoDerecho(int puntaje, Jugador hijoDerecho);
+    boolean establecerHijoDerecho(int puntaje, INodoJuadores hijoDerecho);
 
     /**
      * Establece el hijo izquierdo de un jugador identificado por su puntaje.
@@ -148,6 +150,6 @@ public interface IArbol {
      * @param puntaje el puntaje del jugador padre
      * @param hijoIzquierdo el jugador que será asignado como hijo izquierdo
      */
-    void establecerHijoIzquierdo(int puntaje, Jugador hijoIzquierdo);
+    void establecerHijoIzquierdo(int puntaje, INodoJuadores hijoIzquierdo);
 }
 

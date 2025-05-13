@@ -8,7 +8,7 @@ import practicaparcial.SOLICITUDES.Cola;
  * Interfaz que define las operaciones de un jugador.
  * Contiene los mismos metodos que arbol, la implementacion es distinta.
  */
-public interface IJugador extends IArbol {
+public interface INodoJugadores extends IArbol {
     
     /**
      * Inserta un nuevo jugador en el árbol.
@@ -46,7 +46,7 @@ public interface IJugador extends IArbol {
      *
      * @return una cadena con los jugadores en inorden
      */
-    String impreimirInOrden(); // Nótese el error ortográfico: "impreimir" debería ser "imprimir"
+    String imprimirInOrden(); // Nótese el error ortográfico: "impreimir" debería ser "imprimir"
 
     /**
      * Devuelve una representación en cadena del recorrido en postorden del árbol.
@@ -96,11 +96,12 @@ public interface IJugador extends IArbol {
     String obtenerNombre(int puntaje);
 
     /**
-     * Obtiene el puntaje de la raíz del árbol o de otro nodo relevante según la implementación.
+     * Obtiene el puntaje de la raíz del árbol o de otro nodo relevante segun la entrada.
      *
-     * @return el puntaje correspondiente
+     * @param jugador el jugador a buscar.
+     * @return el puntaje correspondiente.
      */
-    int obtenerPuntaje();
+    int obtenerPuntaje(Jugador jugador);
 
     /**
      * Obtiene la pila de acciones del jugador con el puntaje especificado.
