@@ -27,12 +27,12 @@ public interface IJugador extends IArbol {
     boolean eliminar(Jugador eliminado);
 
     /**
-     * Busca un jugador en el árbol.
+     * Busca un jugador en el árbol en base a su puntaje.
      *
-     * @param jugador el jugador que se desea buscar
-     * @return {@code true} si el jugador fue encontrado, {@code false} en caso contrario
+     * @param puntaje el puntaje que se desea buscar
+     * @returnel jugador si el jugador fue encontrado, {@code null} en caso contrario
      */
-    boolean buscar(Jugador jugador);
+    Jugador buscar(int puntaje);
 
     /**
      * Devuelve una representación en cadena del recorrido en preorden del árbol.
