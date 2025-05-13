@@ -9,5 +9,5 @@ public class NodoAccion {
     }
 
     private TipoAccion Accion;
-    private NodoAccion siguiente;
+    private NodoAccion siguiente;    
 }
